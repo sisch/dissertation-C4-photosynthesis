@@ -4,7 +4,10 @@
 *.bbl
 *.blg
 *.log
+*.pdf
 *.ps
+*.xmpi
+*.icm
 publications/*
 
 #images
