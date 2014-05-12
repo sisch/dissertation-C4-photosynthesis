@@ -2,20 +2,23 @@
 \usepackage[utf8]{inputenc}
 %Lorem ipsum dolor sit amet, ...
 \usepackage{lipsum}
-%Link URIs
-\usepackage{hyperref}
-
 %Bibliography and citation styles
 \usepackage{natbib}
 \setcitestyle{round}
-
+%PDF-1/A compliance, *automatically loads hyperref*
+\usepackage[a-1b]{pdfx}
 %Graphic
 \usepackage{graphicx}
 
-
 %Command to print words of foreign language (e.g. latin) in italics
 \newcommand{\foreignword}[1]{\textit{#1}}
-
 %Command to print species names in italics
 \newcommand{\species}[1]{\textit{#1}}
 
+%Setup hyperref URI looks
+\hypersetup{
+    unicode,
+		colorlinks=true,
+    urlcolor=blue,
+    linkcolor=green
+}
