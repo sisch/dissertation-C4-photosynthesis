@@ -1,0 +1,11 @@
+#TeX output
+*.aux
+*.tps
+*.bbl
+*.blg
+*.log
+*.ps
+publications/*
+
+#images
+*.eps
