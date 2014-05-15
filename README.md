@@ -1,9 +1,12 @@
 #dissertation-C4-photosynthesis
 ==============================
 
-This is my cumulative dissertation manuscript in the field of Plant Bioinformatics. The research has been conducted between October 2010 and December 2013. Part of this online project is providing an overview of the evolution of my thesis. I for myself never learned how to write properly and always find it difficult to start. People sharing this problem can follow the growth of 1) bullet points via 2) crappy sentences to 3) what I hope will turn out an acceptable thesis.
+This is my cumulative dissertation manuscript in the field of Plant Bioinformatics. The research has been conducted between October 2010 and December 2013.
+
+Part of this online project is providing an overview of the evolution of my thesis. I never learned how to write properly and always find it difficult to start. People sharing this problem can follow the growth of 1) bullet points via 2) crappy sentences to 3) what I hope will turn out an acceptable thesis. For documentation of my writing process I will use a [blog found at thesis-evolution.blogspot.com](http://thesis-evolution.blogspot.com)
+
 As this is a cumulative dissertation, the scientific work is already published in several journals. Therefore, the main focus of this manuscript is to show how my work integrates into the field of C4 photosynthesis research and to compile the main scientific conclusions from my publications.
-In the **final** version the publications have to be printed and thus the final version in this repository **will not compile** due to the missing pdfs (see "As a licensee").
+In the **final** version, the publications have to be printed and thus the final version in this repository **will not compile** due to the missing pdfs (see "As a licensee").
 
 The manuscript is written in LaTeX and might or might not be accompanied by a custom LaTeX-class derived from *scrreprt* at some point.
 
