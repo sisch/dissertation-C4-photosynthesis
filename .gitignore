@@ -9,6 +9,6 @@
 *.xmpi
 *.icm
 publications/*
-
+metadata/*
 #images
 *.eps
