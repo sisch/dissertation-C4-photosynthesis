@@ -1,52 +1,21 @@
 \chapter{Main Findings} % Consider renaming to abstract
 
-What did I do so far?
-
-programming and data
-\begin{itemize}
-	\item Custom Analysis pipelines
-	\item Evaluation of \foreignword{de novo} Assembly Software with 454 data
-	\item Evaluation of Assembly Software with Illumina data
-	\item Chimeric contig detection
-	\item Comparison of public datasets from different sources by complexity reduction
-\end{itemize}
-
-metabolism
-\begin{itemize}
-	\item \species{Megathyrsus maximus} PEP-CK type C$_4$
-	\item \species{Megathyrsus} blueprint for engineering C$_4$-cycle
-\end{itemize}
-	
-transport
-\begin{itemize}
-	\item \species{Megathyrsus} intercellular transport requirement
-	\item \species{Megathyrsus} modular intracellular transport machinery
-\end{itemize}
-
-
-
-%%%PLAYGROUND. To be deleted in the final version
-\subsection{Custom analysis pipelines}
-this one is very generic so I will fit it in somewhere in between
-\subsection{Evaluation of assembly softwares}
-For de novo assembly of 454 pyrosequencing reads we tested six different assembly algorithms with simulated reads. These reads were extracted from the \species{Arabidopsis} genome and were therefore considered as perfect reads. To get a more realistic picture of assembly we additionally modified the reads with 1\%/3\%/5\% \foreignword{in silico} base changes.
-The six assembly algorithms, mira \cite{unknown}, velvet \cite{unknown}, SOAP \cite{unknown}, CAP3 \cite{unknown}, TGICL \cite{unknown}, and CLC \foreignword{de novo} assembly \cite{unknown}, qualitatively performed similar, with contig numbers in the $10^5$s and N50s between 476 and 732.
-
 % Starting over again with more focus on the FINDINGS
-\subsubsection{Critical Assessment of Assembly Strategies
+\section{Technical aspects of next-generation sequencing}
+\subsection{Critical Assessment of Assembly Strategies
 \cite{mp_Braeutigam2011}}
 
 In this study, we tested six assembly algorithms\footnote{Graph-based: SOAP, Velvet, MIRA; OLC-based: CAP3, TGICL; proprietary: CLC} for quality in \foreignword{de novo} assembly of 454 data. We could show that CAP3 and TGICL are more robust against single base-changes, which we introduced to simulate sequencing errors, as well as biological variance. TGICL and the commercial CLC \foreignword{de novo} assembly performed best in terms of contig length, redundancy reduction, and chimeric contigs.
 Furthermore, we showed that the tested graph-based algorithms have difficulties assembling full-length transcripts, even when a high number of reads is available. In contrast, the OLC-based assemblers and the proprietary algorithm by CLC produced mostly full-length transcripts with read numbers above 100.
 
-\subsubsection{RNASeq Assembly - Are We There Yet?
+\subsection{RNASeq Assembly - Are We There Yet?
 \cite{mp_Schliesky2012}}
 
 The increase of read length and the decrease of cost led to a replacement of 454 with Illumina sequencing in many experiments. However, the validation of this method in \foreignword{de novo} assembly of non-model sequences has not been validated. Here, we showed that the problems identified with 454 reads in our previous study \cite{mp_Braeutigam2011} persist. Thus, we suggest that in order to make data comparable across studies, a set of quality control (QC) parameters need to be published along with the data. These QC parameters allow for a judgement of the reliability of a dataset.
 The major issue with \foreignword{de novo} assembly of non-model plants is the lack of control over chimeric contigs, for there is no means of detecting them, yet.
 
-\subsection{Research on demand (aka collaborations)}
-\subsubsection{The Protein Composition of the Digestive Fluid
+\section{Research on demand (aka collaborations)}
+\subsection{The Protein Composition of the Digestive Fluid
 from the Venus Flytrap Sheds Light on Prey
 Digestion Mechanisms. \cite{mp_Schulze2012}}
 The venus flytrap is a carnivorous plant, which can digest insects and small spiders to assimilate nutrients.
@@ -55,13 +24,27 @@ Proteome data can only be itnerpreted based on a reliable reference sequence.
 To this end, an RNASeq experiment with \foreignword{de novo} assembly of the sequences was conducted.
 The regulation patterns in both, transcriptome and proteome, suggest that the digestion system has evolved from defense-related genes.
 
-\subsubsection{Impact of SO$_2$ on Arabidopsis thaliana transcriptome in wildtype and sulfite oxidase knockout plants analyzed by RNA deep sequencing.\cite{mp_Hamisch2012}}
+\subsection{Impact of SO$_2$ on Arabidopsis thaliana transcriptome in wildtype and sulfite oxidase knockout plants analyzed by RNA deep sequencing.\cite{mp_Hamisch2012}}
 In plants sulfur dioxide acts as an abiotic stress molecule.
 In this study, the effect of this stress on transcriptional regulation, especially the role of sulfite oxidase (SO) in detoxification, was investigated.
 New candidates, i.e. an apoplastic peroxidase and defensins, were identified to be coregulated with APS reductase and are most-likely involved in SO$_2$-stress response.
 
+\subsection{Analysis of the floral transcriptome of Tarenaya hassleriana (Cleomaceae), a member of the sister group to the Brassicaceae: towards understanding the base of morphological diversity in Brassicales \cite{mp_Bhide2014}}
+\species{Tarenaya hassleriana} belongs to a sister clade of the core Brassicaceae.
+The morphological diversity in T. hassleriana is much higher than in the Brassicaceae.
+In an RNA sequencing experiment the key changes between the two lineages were investigated.
+5600 transcripts were identified to be specific for the Cleomaceae clade, as there were no homologous genes in Brassicaceae, Brassicales, or Rosids at all.
+A Comparison of T. hassleriana transcriptome data with A. thaliana microarray data showed 351 differentially expressed genes in the flower transcript levels of both species.
 
 
+\section{Main research focus}
+\subsection{Towards an integrative model of C$_4$ photosynthetic subtypes: insights from comparative transcriptome analysis of NAD-ME, NADP-ME, and PEP-CK C$_4$ species \cite{mp_Braeutigam2014}}
+The focus of this study was explaining the PEP-CK subtype of C4-photosynthesis in grasses at a molecular level.
+A comparative transcriptomics approach was chosen to determine the regulatory differences of a closely related C3/C4-PEP-CK species pair.
+A reliable sequence resource was created for future experiments.
+From the quantitative comparison of Megathyrsus maximus (C4) and Dichanthelium clandestinum (C3) transcripts we concluded that the PEP-CK cycle from an engineer's point of view is the easiest C$_4$ cycle to create.
+Intracellular transport processes could be grouped to modular transport clusters with simplified net transport reactions.
+Furthermore, from physiological data we could estimate the extent of intercellular transport necessary for maintaining C4-photosynthesis.
 
 
 
