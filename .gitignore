@@ -1,6 +1,7 @@
 #TeX output
 *.aux
 *.tps
+*.out
 *.bbl
 *.blg
 *.log
@@ -12,3 +13,4 @@ publications/*
 metadata/*
 #images
 *.eps
+*.ai
