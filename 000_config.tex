@@ -15,7 +15,17 @@
 \newcommand{\foreignword}[1]{\textit{#1}}
 %Command to print species names in italics
 \newcommand{\species}[1]{\textit{#1}}
-
+%Command to create a blockquote
+\newcommand{\formatquote}[1]{
+\vspace{5pt}\par\noindent
+	\begin{center}
+		\parbox{0.65\textwidth}{
+			\textit{#1}
+		}
+	\end{center}
+	\vspace{\baselineskip}
+\endgraf}
+%\vskip{1\baselineskip}\hspace{1cm}\textit{#1}\vskip{1\baselineskip}
 %Setup hyperref URI looks
 \hypersetup{
     unicode,
