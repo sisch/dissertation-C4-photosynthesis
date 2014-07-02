@@ -58,7 +58,7 @@ A new third generation of sequencing platforms has been introduced in recent yea
 As a major difference, third generation sequencing allows for sequencing of actual DNA molecules and therefore shows no bias of the amplification steps, some second generation sequencing methods suffered.
 The reliability of these platforms is still controversially discussed.
 
-\subsection{Sequencing platforms}
+\subsection{Sequencing platforms used during PhD project}
 \subsubsection{Pyrosequencing (454)}
 Massively parallel pyrosequencing is an approach that has been commercially launched by 454 Life Sciences and was later acquired by Roche.
 DNA fragments are randomly distributed over a picotiter plate and subsequently amplified in the picoliter wells.
@@ -67,7 +67,16 @@ Chemically the sequencing approach detects the pyrophosphate, which is released 
 A combined sulfurylase:luciferase enzyme creates light emission for each pyrophosphate molecule released.
 Therefore, a CCD camera module can capture the amount of light generated per well.
 To sequence, the machine repeatedly adds dNTPs separately, so the light information collected is assigned to a certain nucleotide for each fragment.
-This sequencing approach suffers from long homopolymer stretches.
+This sequencing approach suffers from long homopolymer stretches, because the light intensity detection becomes ambiguous.
+Read lengths of up to 800 bp are possible on GS FLX with Titanium chemicals.
+The number of reads is about a million per picotiter plate.
+\subsubsection{SOLiD}
+Sequencing by ligation has been introduced by Applied Biosystems (now Life Technologies) with the SOLiD platform.
+In this approach a fluorescent dye labeled oligonucleotide is binding two nucleotides of the template strand.
+The readout is a color value.
+One of the two bases is ligated and the process repeats with the position shifted by one.
+This way, each base is read twice, which increases the accuracy to 99.8%.
+Colorspace sequences can be converted bla %CONTINUE HERE
 %NOTES
 Things I need to answer:
 \begin{itemize}
