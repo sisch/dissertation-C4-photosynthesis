@@ -70,13 +70,37 @@ To sequence, the machine repeatedly adds dNTPs separately, so the light informat
 This sequencing approach suffers from long homopolymer stretches, because the light intensity detection becomes ambiguous.
 Read lengths of up to 800 bp are possible on GS FLX with Titanium chemicals.
 The number of reads is about a million per picotiter plate.
+
 \subsubsection{SOLiD}
 Sequencing by ligation has been introduced by Applied Biosystems (now Life Technologies) with the SOLiD platform.
 In this approach a fluorescent dye labeled oligonucleotide is binding two nucleotides of the template strand.
 The readout is a color value.
 One of the two bases is ligated and the process repeats with the position shifted by one.
-This way, each base is read twice, which increases the accuracy to 99.8%.
-Colorspace sequences can be converted bla %CONTINUE HERE
+This way, each base is read twice, which increases the accuracy to 99.8\%.
+Colorspace sequences can be converted to basespace by interpreting the sequence of colors as base-pairings.
+Even though this increases accuracy, one skipped readout is sufficient to invalidate the rest of the read.
+In other words, the information of each base is dependent on the information of the previous base.
+SOLiD sequencing can generate up to 30G bases with a maximum length of 85 bp.
+
+\subsubsection{Illumina}
+The use of modified ddNTPs to identify inserted bases during strand synthesis categorises Illumina sequencing as sequencing by synthesis technology.
+The provided nucleotides are enhanced with a cleavable fluorescent dye and a removable blocking group.
+The blocking group prevents multiple base insertions and leads to a one base at a time readout.
+A CCD camera captures the light emission of the fluorescent labels during laser excitation.
+Because of the blocking groups, Illumina sequencing has a fixed read length.
+Currently, the output of Illumina can reach up to 600G bases with a read length of up to 2x150 bp.
+Comparing the three sequencing technologies, Illumina has the highest rate of error with up to 2\%.
+
+\subsubsection{What is the best platform?}
+Choosing a sequencing platform is highly dependent on the experimental design.
+Sequencing \foreginword{de novo}, i.e. without a reference genome, is considered easier if the read length is higher.
+Whereas, analysing statistical differences in gene regulation benefits from a high number of reads.
+Finally, the costs, accuracy, and availability of analysis software need to be considered.
+Therefore, there are different best platforms for a single use-case, but not a single best platform for all use-cases.
+
+\subsection{Assembly \& mapping.}
+%I will first go to lunch
+
 %NOTES
 Things I need to answer:
 \begin{itemize}
