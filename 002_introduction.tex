@@ -93,13 +93,35 @@ Comparing the three sequencing technologies, Illumina has the highest rate of er
 
 \subsubsection{What is the best platform?}
 Choosing a sequencing platform is highly dependent on the experimental design.
-Sequencing \foreginword{de novo}, i.e. without a reference genome, is considered easier if the read length is higher.
+Sequencing \foreignword{de novo}, i.e. without a reference genome, is considered easier if the read length is higher.
 Whereas, analysing statistical differences in gene regulation benefits from a high number of reads.
 Finally, the costs, accuracy, and availability of analysis software need to be considered.
 Therefore, there are different best platforms for a single use-case, but not a single best platform for all use-cases.
 
-\subsection{Assembly \& mapping.}
+\subsection{Assembly \& mapping}
 %I will first go to lunch
+%I'm back from lunch, let's rock
+High throughput sequencing technologies have arisen only recently.
+The rapid changes and improvements in sequencing technologies are accompanied by changes in big data analytics, as well.
+Therefore, the computational methods available for traditional sequencing need to be re-validated.
+Part of the work presented here focused on this validation especially towards \foreignword{de novo} transcriptome sequencing, where the outcome is unpredictable.
+\subsubsection{\foreignword{De novo} assembly}
+In contrast to reference-based sequence assembly, where the read sequences are matched to a known genome, in \foreignword{de novo} assembly, the full-length information for a gene must be extracted from the read information alone.
+Two conceptually different solutions are currently known: \ac{OLC} and \ac{DBG} assembly.
+
+In \ac{OLC} assemblers all reads are compared to each other (pairwise or grouped) and assembled into contigs, where overlaps exist.
+This method is optimised for few and long sequences.
+The number of comparisons, hence the runtime, as well as the memory consumption increase more than linear with read numbers.
+Algorithms based on the \ac{OLC} principle differ in the pre-selection of reads to compare or in the error tolerance.
+
+\ac{DBG} assemblers employ graph theory to solve the overlap problem.
+That means, a read is represented by a sequence of k-mer nodes, for which every node overlaps in k-1 positions with the neighboring nodes.
+This approach transfers the problem of finding overlaps in all against all reads to finding supported paths through the graph.
+\ac{DBG} assemblers can handle much higher read numbers because memory consumption and computational power required are dependent on the number of unique k-mers used and not necessarily the number of reads.
+
+\subsubsection{Read mapping}
+%CONTINUE HERE
+%cross-species problem, error tolerance, contig mapping bias.
 
 %NOTES
 Things I need to answer:
@@ -109,7 +131,9 @@ Things I need to answer:
 	\item What is the research goal
 \end{itemize}
 \section{Next-Generation Sequencing}
+\begin{itemize}
 	\item Different platforms
 	\item Assembly \& Mapping
 	\item Statistics
+\end{itemize}
 \section{Motivation}
