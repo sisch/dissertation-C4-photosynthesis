@@ -120,8 +120,18 @@ This approach transfers the problem of finding overlaps in all against all reads
 \ac{DBG} assemblers can handle much higher read numbers because memory consumption and computational power required are dependent on the number of unique k-mers used and not necessarily the number of reads.
 
 \subsubsection{Read mapping}
-%CONTINUE HERE
 %cross-species problem, error tolerance, contig mapping bias.
+In order to get quantitative information about gene expression, the sequenced reads need to be assigned to genes.
+Multiple approaches have been developed for read mapping to a reference genome.
+One of the most commonly used mapping algorithms to achieve this is bowtie.
+Bowtie is optimised for mapping speed of nearly perfect sequences.
+However, this algorithm does not work on \foreignword{de novo} sequencing data.
+In \foreignword{de novo} approaches a reference genome is not available or not used on purpose.
+Thus, the read mapping is transferred to a reference sequence of a species that is closely related to the sequenced species.
+Since even short evolutionary distances between species can account for many exchanges in the nucleotide sequence, mapping software like bowtie is unable to match many reads.
+Traditional programs, such as BLAST or BLAT, which are not optimised for speed, allow for mapping in proteinspace, i.e. a nucleotide sequence is translated in all possible frames and then mapped.
+Proteinspace mapping is not affected by synonymous base changes, and thus lenient about the actual nucleotide sequence.
+% more error tolerance, contig mapping bias
 
 %NOTES
 Things I need to answer:
