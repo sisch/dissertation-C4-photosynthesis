@@ -130,9 +130,11 @@ In \foreignword{de novo} approaches a reference genome is not available or not u
 Thus, the read mapping is transferred to a reference sequence of a species that is closely related to the sequenced species.
 Since even short evolutionary distances between species can account for many exchanges in the nucleotide sequence, mapping software like bowtie is unable to match many reads.
 Traditional programs, such as BLAST or BLAT, which are not optimised for speed, allow for mapping in proteinspace, i.e. a nucleotide sequence is translated in all possible frames and then mapped.
-Proteinspace mapping is not affected by synonymous base changes, and thus lenient about the actual nucleotide sequence.
+Since there is redundancy in codon to amino acid translation, proteinspace mapping is not affected by synonymous base changes, and thus lenient about the actual nucleotide sequence.
 % more error tolerance, contig mapping bias
 
+\subsection{Statistics}
+%t-Test, Fisher's Exact Test, DEGSeq, DESeq
 %NOTES
 Things I need to answer:
 \begin{itemize}
