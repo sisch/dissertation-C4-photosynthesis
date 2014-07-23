@@ -13,9 +13,9 @@ However, with growing population sizes the demand for rice increases, as well.
 Now, C$_4$ photosynthesis is considered a very promising trait to cope with this demand by increasing yield.
 \subsection{C$_3$ Photosynthesis}
 Photosynthesis describes the conversion of CO$_2$ and light energy to sugars.
-The primary fixation of CO2 is catalysed by RuBisCO.
+The primary fixation of CO2 is catalysed by \ac{RuBisCO}.
 CO$_2$ is attached to ribulose-1,5-bisphosphate (5C) yielding two molecules of phosphoglycerate (3C), hence the name C$_3$ photosynthesis.
-However, a side reaction to RuBisCO fixing CO$_2$ is the fixation of oxygen.
+However, a side reaction to \ac{RuBisCO} fixing CO$_2$ is the fixation of oxygen.
 The resulting molecule phosphoglycolate needs to be recycled at the loss of CO$_2$ and energy.
 This process, called photorespiration reduces the overall efficiency.
 Carbon fixation in plants performing only C$_3$ photosynthesis is, therefore, dependent on the CO$_2$ availability.
@@ -24,12 +24,12 @@ C$_4$ photosynthesis is a trait that has evolved independently over 60 times thr
 Within the \species{Poaceae} (grasses) the evolutionary origins of C$_4$ photosynthesis are confined within the PACMAD clade.
 Plants performing C$_4$ photosynthesis have evolved to avoid photorespiration and thus reduce energy loss.
 The mechanism to avoid photorespiration consists of changes in metabolism as well as cell architecture.
-A spatial separation of primary carbon fixation and fixation by RuBisCO has evolved by confining the expression of RuBisCO to the bundle sheath cells.
+A spatial separation of primary carbon fixation and fixation by \ac{RuBisCO} has evolved by confining the expression of \ac{RuBisCO} to the bundle sheath cells.
 In parallel primary CO$_2$ fixation is catalysed by PEP carboxylase in the mesophyll cells.
 The transfer of fixed CO$_2$ from mesophyll to bundle sheath is carried out by transfer acids, such as malate or aspartate.
 After transfer to the bundle sheath, the fixed CO$_2$ is released again.
-Thus the two step fixation of C$_4$ photosynthesis increases the CO$_2$ concentration in the vicinity of RuBisCO and suppresses the need for photorespiration.
-As a consequence, less RuBisCO enzyme is needed.
+Thus the two step fixation of C$_4$ photosynthesis increases the CO$_2$ concentration in the vicinity of \ac{RuBisCO} and suppresses the need for photorespiration.
+As a consequence, less \ac{RuBisCO} enzyme is needed.
 Therefore, C$_4$ plants present a higher efficiency.
 %More details wouldn't hurt
 \subsection{C$_4$ rice}
@@ -90,7 +90,10 @@ A CCD camera captures the light emission of the fluorescent labels during laser 
 Because of the blocking groups, Illumina sequencing has a fixed read length.
 Currently, the output of Illumina can reach up to 600G bases with a read length of up to 2x150 bp.
 Comparing the three sequencing technologies, Illumina has the highest rate of error with up to 2\%.
+Working towards quantitative as well as qualitative sequence data:
+\formatquote{What is the best sequencing approach to answer my experimental question?}
 
+%Following paragraph might fit better into conclusions
 \subsubsection{What is the best platform?}
 Choosing a sequencing platform is highly dependent on the experimental design.
 Sequencing \foreignword{de novo}, i.e. without a reference genome, is considered easier if the read length is higher.
@@ -118,6 +121,8 @@ Algorithms based on the \ac{OLC} principle differ in the pre-selection of reads 
 That means, a read is represented by a sequence of k-mer nodes, for which every node overlaps in k-1 positions with the neighboring nodes.
 This approach transfers the problem of finding overlaps in all against all reads to finding supported paths through the graph.
 \ac{DBG} assemblers can handle much higher read numbers because memory consumption and computational power required are dependent on the number of unique k-mers used and not necessarily the number of reads.
+With many algorithms at hand:
+\formatquote{What is the best way to assemble the generated 454 \& Illumina reads to get reliable transcript sequences?}
 
 \subsubsection{Read mapping}
 %cross-species problem, error tolerance, contig mapping bias.
@@ -128,24 +133,56 @@ Bowtie is optimised for mapping speed of nearly perfect sequences.
 However, this algorithm does not work on \foreignword{de novo} sequencing data.
 In \foreignword{de novo} approaches a reference genome is not available or not used on purpose.
 Thus, the read mapping is transferred to a reference sequence of a species that is closely related to the sequenced species.
-Since even short evolutionary distances between species can account for many exchanges in the nucleotide sequence, mapping software like bowtie is unable to match many reads.
-Traditional programs, such as BLAST or BLAT, which are not optimised for speed, allow for mapping in proteinspace, i.e. a nucleotide sequence is translated in all possible frames and then mapped.
+Even short evolutionary distances between species can account for many exchanges in the nucleotide sequence.
+Thus, mapping software like bowtie is unable to match many reads.
+Traditional programs, such as BLAST or BLAT, which are not optimised for speed, allow for mapping in proteinspace, i.e. translated nucleotide sequence mapped in all possible frames.
 Since there is redundancy in codon to amino acid translation, proteinspace mapping is not affected by synonymous base changes, and thus lenient about the actual nucleotide sequence.
 % more error tolerance, contig mapping bias
+Hence, the question:
+\formatquote{What is the best mapping approach for this study?}
 
 \subsection{Statistics}
 %t-Test, Fisher's Exact Test, DEGSeq, DESeq
+One of the main challenges in statistics on transcriptome data is the dynamic range of read abundance.
+This abundance can range over five orders of magnitude.
+Many of the published Statistics for next-generation sequencing were initially designed for micro-array experiments.
+In these experiments the differential expression of genes was determined by a fold-change comparison between sampe and control.
+However, the dynamic range and the error types are different.
+Thus, the statistical methods to evaluate differential gene expression need to be adapted for RNA-Seq.
+Throughout this study, the statistical methods were subject to many changes and adaptations.
+
+Under the assumption that each read is randomly drawn from a population of reads, \cite{someone_1970} showed that this process can be explained by a binomial distribution and approximated by a Poisson distribution.
+This approach was provided in an R package called "`DEGSeq"'.
+Later, \cite{someoneelse_1972} could show, that modelling the stochastics of read sequencing is more accurate when using a negative binomial distribution. 
+This approach was also provided in an R package called "`DESeq"'.
+None of these broadly accepted approaches for RNA-Seq statistics have found the golden solution, yet.
+The development and improvement of the statistics methods is still an ongoing process.
+Therefore an important decision was:
+%Multiple Testiing correction?
+\formatquote{Which statistic model is the most reliable to detect differential expression in RNA-Seq approaches?}
+
+%I do not know, whether this following paragraph is considered scientific, however, I think it is important for the overall impression of this dissertation. TODO: Discuss it with people!
+\section{Personal Motivation}
+Main driver of my research was the urge to understand the C4 cycle in a depth that allows for building such a metabolic unit from scratch.
+So, with the fundholders' overall goal of re-engineering C$_4$ crops in mind, during my research, I aimed at understanding the underlying molecular mechanisms in the C$_4$ grass \species{Megathyrsus maximus}.
+At the time of experimental design, the method of choice to achieve this was next-generation sequencing
+It was the most promising approach to provide a comparative and comprehensive insight into all involved genes in the \ac{PEP-CK} type C$_4$ cycle as opposed to the c3 cycle.
+Furthermore, no C$_4$ grass of the \ac{PEP-CK} type has been investigated in such a comparative high-throughput experiment, before.
+Thus, my research was driven by the question: Which transcripts are responsible for the functional mechanisms in \species{Megathyrsus maximus} that induce a C$_4$ cycle in contrast to \species{Dichanthelium clandestinum}?
+As a side project I investigated, which sequencing techniques in combination with which processing approaches are suitable for answering this question.
+Finally, the extensive use of automation and data processing techniques tempted me into working on this project. %entangled me with this project
+
 %NOTES
-Things I need to answer:
-\begin{itemize}
-	\item What is characteristic of C4-photosynthesis
-	\item Why is it important to investigate
-	\item What is the research goal
-\end{itemize}
-\section{Next-Generation Sequencing}
-\begin{itemize}
-	\item Different platforms
-	\item Assembly \& Mapping
-	\item Statistics
-\end{itemize}
-\section{Motivation}
+%Things I need to answer:
+%\begin{itemize}
+%	\item What is characteristic of C4-photosynthesis
+%	\item Why is it important to investigate
+%	\item What is the research goal
+%\end{itemize}
+%\section{Next-Generation Sequencing}
+%\begin{itemize}
+%	\item Different platforms
+%	\item Assembly \& Mapping
+%	\item Statistics
+%\end{itemize}
+%\section{Motivation}
