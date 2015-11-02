@@ -9,6 +9,8 @@
 *.ps
 *.xmpi
 *.icm
+*.synctex.gz
+citations/
 publications/*
 metadata/*
 #images
