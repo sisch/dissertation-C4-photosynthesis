@@ -9,7 +9,7 @@
 	From this reference we generated simulated 454 reads, based on actual sequencing data from former studies in \species{Cleome} \cite{op_Braeutigam2010}.
 	These simulated reads were perfect in terms of sequencing errors.
 	Therefore, we additionally created read libraries with artificial 1\%, 3\%, and 5\% base changes.
-	With the 4 read libraries as input sequences, we used the assembly software: SOAP\cite{unknown}, Velvet\cite{unknown}, MIRA\cite{unknown}, CAP3\cite{unknown}, TGICL\cite{unknown}, and \cite{CLC}.
+	With the 4 read libraries as input sequences, we used the assembly software:     \ac{SOAP}\cite{unknown}, \ac{Velvet}\cite{unknown}, \ac{MIRA}\cite{unknown}, \ac{CAP3}\cite{unknown}, \ac{TGICL}\cite{unknown}, and \ac{CLC}\cite{CLC}.
 	Traditional quality parameters to assess a \foreignword{de novo} transcriptome assembly were taken from genome assembly.
 	These metrics, namely N50, maximum contig length, number of contigs, describe the size and distribution of the contig library.
 	As a rule of thumb, in genome assembly larger contigs represent a better assembly.
@@ -24,16 +24,16 @@
 	Thus, we can conclude, that more reads make an assembly even worse, if using \ac{DBG} assemblers, but have no negative effect on \ac{OLC}assemblies.
 	With increasing percentage of simulated sequencing errors (i.e. random base changes) the difference becomes less significant.
 	
-	%Hybrid transcripts: how many??? <-Connection to second publication
-	
-	When using cheaper and less error prone Illumina sequencing, the numbers of reads one sequencing run yields increases drastically.
+	When using cheaper and less error prone Illumina sequencing, the numbers of reads one sequencing run yields increase drastically.
 	Thus, \ac{OLC} assemblers are not feasible if at all able to assemble the reads in terms of computational power.
-	Yet, the number of transcriptome sequencing experiments in the public databases and the variety of used assembly software are increasing.
-	As already showed, assembly algorithms are highly sensitive to uncontrollable changes in the sequencing experiment.
-	To cope with this, we set a standard quality assessment approach.
-	The aim was making public datasets more accessible to other working groups by providing additional information along with the sequences.
+	Yet, due to decreasing costs, the number of transcriptome sequencing experiments in the public databases and the variety of used assembly software are increasing.
+	As was shown before, RNA sequencing experiments are sensitive to uncontrolled experimental parameters.
+	On top of that, many different assembly algorithms are available and used.
+	Therefore, comparability of public data resources is not ensured.
+	To cope with this, we suggested a set of standard quality measures, that can be obtained regardless of sequencing and assembly technology.
+	The aim was making public datasets more accessible by providing additional information along with the sequences.
 	These information do not alter nor improve the assembly quality, but they allow for a reliable quality estimate.
-	Hence, a comparison of sequencing experiments can be investigated based on the quality parameters.
+	Hence, the comparability of sequencing experiments can be determined based on the quality parameters.
 	
 	The quality assessment parameters we suggest:
 		
@@ -50,13 +50,24 @@
 			\end{itemize}
 		\end{itemize}
 		
-		We tested all these parameters in an actual sequencing of Arabidopsis thaliana transcriptome against the Arabidopsis thaliana genome.
+		We tested all these parameters in an actual sequencing of Arabidopsis thaliana transcriptome against the Arabidopsis thaliana reference genome (TAIR10).
 		Compared with the theoretical values for the aforementioned parameters the experiments showed us that we are still far from ideal assemblies.
 		Yet, the suggested parameters allow for a rating of the completeness and reliability of the assembled transcriptome.
 		Until now, there is no approach to detect chimeric contigs in transcriptome assemblies, that is independent of a reference genome.
 		Thus, detecting chimeric contigs in a non-model species without a reference is not possible so far.
+		Having chimera in the set of contigs leads to an unpredictable shift of expression values in all involved transcripts.
+		The problem of dissecting chimeric contigs into their underlying transcripts still needs to be solved.
+		Only then, expression levels can be unambiguously determined genome wide.
+		
 		An approach using expression information to identify the fusion positions did not succeed (figure \ref{fig:conclusions_chimeraByExpression}).
-		A perfect assembly of the actual transcriptome might be possible with single molecule sequencing techniques, once practicable.
+		We tried to identify the fusion sites based on expression coverage of the underlying sequences.
+		Unfortunately, we were not able to find a suitable mathematical model to predict these sites reliably.
+		As a consequence we were not able to cut fused sequences into their originating transcripts without a priori knowledge about the genome.
+		%elaborate
+
+		RNA sequencing is a rapidly evolving technology, so a perfect assembly of the actual transcriptome might be possible with single molecule sequencing techniques.
+		However, as of now, these new third generation sequencing technologies are not broadly available, yet.
+		Thus, most experimentalists continue to use short-read technologies and depend on reliable assembly algorithms.
 		
 		\begin{figure}%
 			\includegraphics[width=\columnwidth]{images/conclusions_chimeraByExpression}%
