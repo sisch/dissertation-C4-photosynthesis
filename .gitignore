@@ -16,3 +16,4 @@ metadata/*
 #images
 *.eps
 *.ai
+*.xcf
