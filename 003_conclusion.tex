@@ -4,6 +4,9 @@
 	In our study, we wanted to evaluate the transcriptomes of non-model species (i.e. species without a sequenced genome).
 	At the time of the initial experimental design, 454 sequencing was the commonly favorited approach for sequencing non-model species.
 	However, it remained unclear, whether \ac{OLC} or \ac{DBG} assemblers were more successful in assembling full-length contigs for each transcript.
+	% Advantages of Illumina for expression analysis
+	% Answers question on sequencing approach for quantitative aspect
+	
 	To find an answer to this question, we used the \species{Arabidopsis thaliana} genome as a well known reference.
 	Besides, we were interested in evaluating the assumption\footnote{It really was just a guess, but I might need to call it hypothesis in my final version}: More reads lead to a better (i.e. more complete) assembly.
 	From this reference we generated simulated 454 reads, based on actual sequencing data from former studies in \species{Cleome} \cite{op_Braeutigam2010}.
@@ -52,6 +55,7 @@
 		
 		We tested all these parameters in an actual sequencing of Arabidopsis thaliana transcriptome against the Arabidopsis thaliana reference genome (TAIR10).
 		Compared with the theoretical values for the aforementioned parameters the experiments showed us that we are still far from ideal assemblies.
+		% Yet 454 assembly with OLC is best (answers question regarding assembly approach)
 		Yet, the suggested parameters allow for a rating of the completeness and reliability of the assembled transcriptome.
 		Until now, there is no approach to detect chimeric contigs in transcriptome assemblies, that is independent of a reference genome.
 		Thus, detecting chimeric contigs in a non-model species without a reference is not possible so far.
@@ -64,9 +68,10 @@
 		Unfortunately, we were not able to find a suitable mathematical model to predict these sites reliably.
 		As a consequence we were not able to cut fused sequences into their originating transcripts without a priori knowledge about the genome.
 		%elaborate
+		% Answers question on sequencing approach for qualitative aspect
 
 		RNA sequencing is a rapidly evolving technology, so a perfect assembly of the actual transcriptome might be possible with single molecule sequencing techniques.
-		However, as of now, these new third generation sequencing technologies are not broadly available, yet.
+		However, as of now, these new third generation sequencing technologies are not broadly available.
 		Thus, most experimentalists continue to use short-read technologies and depend on reliable assembly algorithms.
 		
 		\begin{figure}%
@@ -75,7 +80,8 @@
 			\label{fig:conclusions_chimeraByExpression}%
 		\end{figure}
 	%Hybrid contigs, Contig and read mapping,
-	%Statistics
+	%Statistics includes papers on Cleome flower and Sulfite oxidase in Arabidopsis
+	% Answers question about statistics
 	
  \section{Application of NGS to single gene or gene family research}
  % Arabidopsis SO2 and Cleome floral transcriptome
@@ -84,7 +90,27 @@
  
  \section{Genome wide transcript analysis}
  \subsection{\species{Dionaea}}
+ \begin{itemize}
+ 	\item Dionaea
+ 	% Shows that genome wide + exploratory does work.
+ \end{itemize}
  \subsection{\species{Megathyrsus maximus}}
+% First step confirming \species{D. clandestinum} as suitable C$_3$ comparison partner by biochemical assays.
+% Sequencing 
+ Expression with a focus on intracellular transport reveals blueprint with coupled transport mechanisms and energy requirements for C$_4$ 4:2.5 similar to C$_3$ 3:2 (ATP:NAD(P)H)
+ Traditional approaches (differential expression) not sufficient to understand the whole cycle.
+ Function enrichment based on EC and Pfam-Domains provides missing pieces.
+ This blueprint supersedes the need for cyclic electron flow and hence dimorphic chloroplasts.
+ Cycle can be easily adapted to changing environmental conditions with either increased NAD(P)H production or increased ATP production
+ Much simpler than other C$_4$ cycles suggested before.
+ C$_4$ has two subtypes NAD-ME+PEP-CK and NADP-ME+PEP-CK with varying ratios of ME:PEP-CK
+ Cycle stability achieved through down regulation of pyruvate dehydrogenase in BSC mitochondria and aspartate oxidase in MC cytosol.
+ 
+ Intercellular transport in C$_4$ cycle requires alterations in plasmodesmata.
+ An estimate evaluates to 100-fold more transport in C$_4$ compared to C$_3$.
+ % current research role of secondary plasmodesmata and callose deposition in C$_4$
+ % Answers questions regarding changes between C3 and C4 in multiple aspects (probably need to point that out more specific throughout the text)
+ 
 	\begin{itemize}
 		\item PEP-CK/NAD-ME cycle balance
 		\item chloroplast transport balancing
