@@ -63,22 +63,34 @@
 		The problem of dissecting chimeric contigs into their underlying transcripts still needs to be solved.
 		Only then, expression levels can be unambiguously determined genome wide.
 		
+				\begin{figure}%
+					\includegraphics[width=\columnwidth]{images/conclusions_chimeraByExpression}%
+					\caption{The read expression across chimeric genes does not reveal the positions of gene fusion marked by dashed lines (determined by mapping to reference genome). (This figure was presented as part of a poster on BioComp2012)}%
+					\label{fig:conclusions_chimeraByExpression}%
+				\end{figure}
 		An approach using expression information to identify the fusion positions did not succeed (figure \ref{fig:conclusions_chimeraByExpression}).
 		We tried to identify the fusion sites based on expression coverage of the underlying sequences.
 		Unfortunately, we were not able to find a suitable mathematical model to predict these sites reliably.
 		As a consequence we were not able to cut fused sequences into their originating transcripts without a priori knowledge about the genome.
+		
+		% % % One paragraph summary
+		Illumina produces a large quantity of short reads with a higher average quality in comparison to 454 sequencing.
+		However, \foreignword{de novo} assembly of these is prone to misassemblies, especially invalid fusions of multiple transcripts.
+		As there are no means, to detect these in non-model organisms (i.e. without sequenced genome), a different approach is required.
+		Assembly of 454 reads results in a much more accurate set of distinct, putative transcripts.
+		Hence, it can be used as a sequence reference for sub-cellular localization and for further cloning experiments.
+		% % %
+		
 		%elaborate
 		% Answers question on sequencing approach for qualitative aspect
 
 		RNA sequencing is a rapidly evolving technology, so a perfect assembly of the actual transcriptome might be possible with single molecule sequencing techniques.
 		However, as of now, these new third generation sequencing technologies are not broadly available.
-		Thus, most experimentalists continue to use short-read technologies and depend on reliable assembly algorithms.
+		For now, most experimentalists continue to use short-read technologies and depend on reliable assembly algorithms.
+		Thus, we finally decided to use 454 sequencing to create a reference sequence for \foreignword{in silico} localization.
+		Furthermore, to investigate differential gene expression we used deep sequencing technology, Illumina.
 		
-		\begin{figure}%
-			\includegraphics[width=\columnwidth]{images/conclusions_chimeraByExpression}%
-			\caption{The read expression across chimeric genes does not reveal the positions of gene fusion marked by dashed lines (determined by mapping to reference genome). (This figure was presented as part of a poster on BioComp2012)}%
-			\label{fig:conclusions_chimeraByExpression}%
-		\end{figure}
+		
 	%Hybrid contigs, Contig and read mapping,
 	%Statistics includes papers on Cleome flower and Sulfite oxidase in Arabidopsis
 	% Answers question about statistics
