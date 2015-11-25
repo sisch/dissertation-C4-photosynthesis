@@ -6,9 +6,9 @@
 	However, it remained unclear, whether \ac{OLC} or \ac{DBG} assemblers were more successful in assembling full-length contigs for each transcript.
 	% Advantages of Illumina for expression analysis
 	% Answers question on sequencing approach for quantitative aspect
-	
+	\subsection{Which of two approaches \ac{OLC} or \ac{DBG} is more suitable for \foreignword{de novo} assembly?}
 	To find an answer to this question, we used the \species{Arabidopsis thaliana} genome as a well known reference.
-	Besides, we were interested in evaluating the assumption\footnote{It really was just a guess, but I might need to call it hypothesis in my final version}: More reads lead to a better (i.e. more complete) assembly.
+	Besides, we were interested in evaluating the assumption\footnote{Analogous to genome assembly}: More reads lead to a better (i.e. more complete) assembly.
 	From this reference we generated simulated 454 reads, based on actual sequencing data from former studies in \species{Cleome} \cite{op_Braeutigam2010}.
 	These simulated reads were perfect in terms of sequencing errors.
 	Therefore, we additionally created read libraries with artificial 1\%, 3\%, and 5\% base changes.
@@ -90,7 +90,26 @@
 		Thus, we finally decided to use 454 sequencing to create a reference sequence for \foreignword{in silico} localization.
 		Furthermore, to investigate differential gene expression we used deep sequencing technology, Illumina.
 		
+		\subsection{Expression levels as a proxy for functional differences}
+		Counting the number of times a transcript is sequenced to find differences in expression of the underlying gene is not a new approach.
+		It has successfully been used on micro-array data before the advent of next generation sequencing.
+		At the same time, statistics for evaluating the difference in micro array signals were developed.
+		However, these statistics were not feasible to analyze next generation sequencing data that shows a different distribution.
 		
+		From a multitude of possible statistics approaches, we chose to use DESeq.
+		In contrast to other approaches, this statistic is not based on a Poisson-model, which is unable to consider the biological variance of samples in the same category.
+		To counteract this deficit, expression values are modeled with a negative binomial distribution.
+		Hence, the biological sampling variance is taken into account and less false positives are generated.
+		% The part on DESeq should be extended a bit.
+
+		\subsection{From transcripts to gene functions}
+		
+		%subsection on statistics
+		- Originally developed for MA
+		- MA have different dynamic range than RNASeq
+		- new methods for RNASeq normalize and perform black magic
+		- Functional enrichment gene-wise, pathway-wise, or function-wise
+		- 
 	%Hybrid contigs, Contig and read mapping,
 	%Statistics includes papers on Cleome flower and Sulfite oxidase in Arabidopsis
 	% Answers question about statistics
